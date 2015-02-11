@@ -140,6 +140,20 @@
 			this declarable will be added as the first item in the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr> at
 			the time when it is being processed; this is notwithstanding any later declarations which may also be inserted at the same index.
             	</p>
+            	
+            	<h3>The Contents</h3>
+            	
+            	<p>
+            		The contents of the block do not necessarily need to be JavaScript. SuperScript will simply move the contents 
+            		into a <abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration. It
+            		is left to the developer to configure how and where these contents are emitted.
+            	</p>
+            	
+            	<p>
+            		In the above examples JavaScript was clearly used. It is not necessary to use a <code>&lt;script&gt;</code> tag: SuperScript 
+            		will remove any wrapping tags found inside the block and use only the contents. However, writing a <code>&lt;script&gt;</code> tag
+            		invokes intellisense when writing JavaScript.
+            	</p>
 		
 	</div>
 
