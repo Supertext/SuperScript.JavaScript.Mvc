@@ -25,57 +25,121 @@
 		  through the referenced <abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr>.
 		</p>
 		
-        <pre class="brush: c#">
-            public static class HtmlExtensions
-            {
-                static IDisposable JavaScriptContainer(this HtmlHelper helper)
-                static IDisposable JavaScriptContainer(this HtmlHelper helper, string emitterKey)
-                static IDisposable JavaScriptContainer(this HtmlHelper helper, int insertAt)
-                static IDisposable JavaScriptContainer(this HtmlHelper helper, string emitterKey, int insertAt)
-            }
-        </pre>
-        
-        <pre class="brush: razor">
-            @using SuperScript.JavaScript.Mvc.Containers
-            &#10;
-            &hellip;
-            &#10;
-            @using (Html.JavaScriptContainer())
-            {
-                &lt;script type="text/javascript"&gt;
-                
-                    var _var1 = "hello world";
-                
-                &lt;/script&gt;
-            }
-        </pre>
-		
-        <p>
-            The above example will move the inner <code>&lt;script&gt;</code> block into a 
-            <abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration. In 
-            this example the declaration will be emitted through the <a href="http://supertext.github.io/SuperScript/emitters/emitters.html">default emitter</a>.
-        </p>
-        
-        <pre class="brush: razor">
-            @using SuperScript.JavaScript.Mvc.Containers
-            &#10;
-            &hellip;
-            &#10;
-            @using (Html.JavaScriptContainer())
-            {
-                &lt;script type="text/javascript"&gt;
-                
-                    var _var1 = "hello world";
-                
-                &lt;/script&gt;
-            }
-        </pre>
-		
-        <p>
-            The above example will move the inner <code>&lt;script&gt;</code> block into a 
-            <abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration. In 
-            this example the declaration will be emitted through the <a href="http://supertext.github.io/SuperScript/emitters/emitters.html">default emitter</a>.
-        </p>
+	        <pre class="brush: c#">
+	            public static class HtmlExtensions
+	            {
+	                static IDisposable JavaScriptContainer(this HtmlHelper helper)
+	                static IDisposable JavaScriptContainer(this HtmlHelper helper, string emitterKey)
+	                static IDisposable JavaScriptContainer(this HtmlHelper helper, int insertAt)
+	                static IDisposable JavaScriptContainer(this HtmlHelper helper, string emitterKey, int insertAt)
+	            }
+	        </pre>
+	        
+	        <pre class="brush: razor">
+			@using SuperScript.JavaScript.Mvc.Containers
+			&#10;
+			&hellip;
+			&#10;
+			@using (Html.JavaScriptContainer())
+			{
+				&lt;script type="text/javascript"&gt;
+				
+					var demoVar = "hello world";
+				
+				&lt;/script&gt;
+			}
+	        </pre>
+			
+	        <p>
+	            The above example will move the inner <code>&lt;script&gt;</code> block into a 
+	            <abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration. In 
+	            this example the declaration will be emitted through the <a href="http://supertext.github.io/SuperScript/emitters/emitters.html">default emitter</a>.
+	        </p>
+	        
+	        <pre class="brush: razor">
+			@using SuperScript.JavaScript.Mvc.Containers
+			&#10;
+			&hellip;
+			&#10;
+			@using (Html.JavaScriptContainer("javascript"))
+			{
+				&lt;script type="text/javascript"&gt;
+				
+					var demoVar = "hello world";
+				
+				&lt;/script&gt;
+			}
+	        </pre>
+            
+            	<p>
+			In this example the declaration will be emitted through the an 
+			<abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr> with the 
+			<abbr title="SuperScript.Emitters.IEmitter.Key"><code>Key</code></abbr> "javascript". (Note that this requires that 
+			an <abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr> with the 
+			<abbr title="SuperScript.Emitters.IEmitter.Key"><code>Key</code></abbr> "javascript" is configured within the project. 
+			This is not provided out of the box by SuperScript.)
+	        </p>
+	        
+	        <pre class="brush: razor">
+			@using SuperScript.JavaScript.Mvc.Containers
+			&#10;
+			&hellip;
+			&#10;
+			@using (Html.JavaScriptContainer(0))
+			{
+				&lt;script type="text/javascript"&gt;
+				
+					var demoVar = "hello world";
+				
+				&lt;/script&gt;
+			}
+	        </pre>
+			
+	        <p>
+			The above example will move the inner <code>&lt;script&gt;</code> block into a 
+			<abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration which will 
+			be added as the first item in the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr>. Note that 
+			this declarable will be added as the first item in the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr> at
+			the time when it is being processed; this is notwithstanding any later declarations which may also be inserted at the same index.
+            	</p>
+            	
+            	<p>
+            		In this example the declaration will be emitted through the <a href="http://supertext.github.io/SuperScript/emitters/emitters.html">default emitter</a>.
+            	</p>
+	        
+	        <pre class="brush: razor">
+			@using SuperScript.JavaScript.Mvc.Containers
+			&#10;
+			&hellip;
+			&#10;
+			@using (Html.JavaScriptContainer("javascript", 0))
+			{
+				&lt;script type="text/javascript"&gt;
+				
+					var demoVar = "hello world";
+				
+				&lt;/script&gt;
+			}
+	        </pre>
+			
+	        <p>
+	            The above example will move the inner <code>&lt;script&gt;</code> block into a 
+	            <abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration. In 
+	            this example the declaration will be emitted through the an 
+	            <abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr> with the 
+	            <abbr title="SuperScript.Emitters.IEmitter.Key"><code>Key</code></abbr> "javascript". (Note that this requires that 
+	            an <abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr> with the 
+	            <abbr title="SuperScript.Emitters.IEmitter.Key"><code>Key</code></abbr> "javascript" is configured within the project. 
+	            This is not provided out of the box by SuperScript.)
+	        </p>
+			
+	        <p>
+			This example will also move the inner <code>&lt;script&gt;</code> block into a 
+			<abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration which will 
+			be added as the first item in the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr>. Note that 
+			this declarable will be added as the first item in the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr> at
+			the time when it is being processed; this is notwithstanding any later declarations which may also be inserted at the same index.
+            	</p>
 		
 	</div>
 
