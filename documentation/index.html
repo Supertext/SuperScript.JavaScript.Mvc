@@ -1,0 +1,82 @@
+<div class="row">
+
+	<div class="col-xs-12">
+	
+		<h2>What Does It Do?</h2>
+		
+		<p>
+			This library is an add-on for <a href="https://github.com/Supertext/SuperScript" target="_blank">SuperScript</a>. It is strongly recommended
+			to read the <a href="http://supertext.github.io/SuperScript/" target="_blank">documentation</a> for the core project before proceeding with this 
+			library. If you haven't yet read the core documentation then it is recommended that you start by reading about the 
+			<a href="http://supertext.github.io/SuperScript/core-concepts.html" target="_blank">core concepts</a>.
+		</p>
+		
+		<p>
+			SuperScript.JavaScript.Mvc offers a Razor view-based block for enclosing server-side entities to be processed by SuperScript.
+		</p>
+		
+		<p>
+		  SuperScript will retrieve the contents of this block and create an instance of 
+		  <abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> containing these contents.
+		</p>
+		
+		<p>
+		  When the Razor view is rendered as a webpage the contents of the block will be empty and the retrieved contents will be emitted 
+		  through the referenced <abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr>.
+		</p>
+		
+        <pre class="brush: c#">
+            public static class HtmlExtensions
+            {
+                static IDisposable JavaScriptContainer(this HtmlHelper helper)
+                static IDisposable JavaScriptContainer(this HtmlHelper helper, string emitterKey)
+                static IDisposable JavaScriptContainer(this HtmlHelper helper, int insertAt)
+                static IDisposable JavaScriptContainer(this HtmlHelper helper, string emitterKey, int insertAt)
+            }
+        </pre>
+        
+        <pre class="brush: razor">
+            @using SuperScript.JavaScript.Mvc.Containers
+            &#10;
+            &hellip;
+            &#10;
+            @using (Html.JavaScriptContainer())
+            {
+                &lt;script type="text/javascript"&gt;
+                
+                    var _var1 = "hello world";
+                
+                &lt;/script&gt;
+            }
+        </pre>
+		
+        <p>
+            The above example will move the inner <code>&lt;script&gt;</code> block into a 
+            <abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration. In 
+            this example the declaration will be emitted through the <a href="http://supertext.github.io/SuperScript/emitters/emitters.html">default emitter</a>.
+        </p>
+        
+        <pre class="brush: razor">
+            @using SuperScript.JavaScript.Mvc.Containers
+            &#10;
+            &hellip;
+            &#10;
+            @using (Html.JavaScriptContainer())
+            {
+                &lt;script type="text/javascript"&gt;
+                
+                    var _var1 = "hello world";
+                
+                &lt;/script&gt;
+            }
+        </pre>
+		
+        <p>
+            The above example will move the inner <code>&lt;script&gt;</code> block into a 
+            <abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration. In 
+            this example the declaration will be emitted through the <a href="http://supertext.github.io/SuperScript/emitters/emitters.html">default emitter</a>.
+        </p>
+		
+	</div>
+
+</div>
