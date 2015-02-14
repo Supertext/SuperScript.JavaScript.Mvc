@@ -34,72 +34,54 @@
 	                static IDisposable JavaScriptContainer(this HtmlHelper helper, string emitterKey, int insertAt)
 	            }
 	        </pre>
-	        
-	        <pre class="brush: razor">
-			@using SuperScript.JavaScript.Mvc.Containers
-			&hellip;
-			@using (Html.JavaScriptContainer())
-			{
-				&lt;script type="text/javascript"&gt;
-				
-					var demoVar = "hello world";
-				
-				&lt;/script&gt;
-			}
-	        </pre>
-			
-	        <p>
-	            The above example will move the inner <code>&lt;script&gt;</code> block into a 
-	            <abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration. In 
-	            this example the declaration will be emitted through the <a href="http://supertext.github.io/SuperScript/emitters/emitters.html">default emitter</a>.
-	        </p>
-	        
-	        <pre class="brush: razor">
-			@using SuperScript.JavaScript.Mvc.Containers
-			&hellip;
-			@using (Html.JavaScriptContainer("javascript"))
-			{
-				&lt;script type="text/javascript"&gt;
-				
-					var demoVar = "hello world";
-				
-				&lt;/script&gt;
-			}
-	        </pre>
-            
-            	<p>
-			In this example the declaration will be emitted through the an 
-			<abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr> with the 
-			<abbr title="SuperScript.Emitters.IEmitter.Key"><code>Key</code></abbr> "javascript". (Note that this requires that 
-			an <abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr> with the 
-			<abbr title="SuperScript.Emitters.IEmitter.Key"><code>Key</code></abbr> "javascript" is configured within the project. 
-			This is not provided out of the box by SuperScript.)
-	        </p>
-	        
-	        <pre class="brush: razor">
-			@using SuperScript.JavaScript.Mvc.Containers
-			&hellip;
-			@using (Html.JavaScriptContainer(0))
-			{
-				&lt;script type="text/javascript"&gt;
-				
-					var demoVar = "hello world";
-				
-				&lt;/script&gt;
-			}
-	        </pre>
-			
-	        <p>
-			The above example will move the inner <code>&lt;script&gt;</code> block into a 
-			<abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration which will 
-			be added as the first item in the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr>. Note that 
-			this declarable will be added as the first item in the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr> at
-			the time when it is being processed; this is notwithstanding any later declarations which may also be inserted at the same index.
-            	</p>
-            	
-            	<p>
-            		In this example the declaration will be emitted through the <a href="http://supertext.github.io/SuperScript/emitters/emitters.html">default emitter</a>.
-            	</p>
+
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Type</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tr>
+				<td>helper</td>
+				<td>HtmlHelper</td>
+				<td>
+					<p>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>emitterKey</td>
+				<td>string</td>
+				<td>
+					<p>
+						Indicates which instance of <abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr> the content should be added to.
+					</p>
+					<p>
+						<strong>Optional</strong>. If not specified then the contents will be emitted through the default instance of <abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr>.
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>insertAt</td>
+				<td>int</td>
+				<td>
+					<p>
+						Indicates the index in the collection at which the contents are to be inserted.
+					</p>
+					<p>
+						<strong>Optional</strong>. If not specified, like all declarations, this declaration will be appended to the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr>.
+					</p>
+					<p>
+						Note that a declarable may be added at the specified index in the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr> at
+						the time when this declaration is being processed; this is notwithstanding any later declarations which may also be inserted at the same index.
+					</p>
+				</td>
+			</tr>
+		</table>
+		
+		<h3>Example</h3>
 	        
 	        <pre class="brush: razor">
 			@using SuperScript.JavaScript.Mvc.Containers
@@ -115,28 +97,26 @@
 	        </pre>
 			
 	        <p>
-	            The above example will move the inner <code>&lt;script&gt;</code> block into a 
-	            <abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration. In 
-	            this example the declaration will be emitted through the an 
-	            <abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr> with the 
-	            <abbr title="SuperScript.Emitters.IEmitter.Key"><code>Key</code></abbr> "javascript". (Note that this requires that 
-	            an <abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr> with the 
-	            <abbr title="SuperScript.Emitters.IEmitter.Key"><code>Key</code></abbr> "javascript" is configured within the project. 
-	            This is not provided out of the box by SuperScript.)
+			The above example will move the inner <code>&lt;script&gt;</code> block into a 
+			<abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration. In 
+			this example the declaration will be emitted through the an 
+			<abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr> with the 
+			<abbr title="SuperScript.Emitters.IEmitter.Key"><code>Key</code></abbr> "javascript". (Note that this requires that 
+			an <abbr title="SuperScript.Emitters.IEmitter"><code>IEmitter</code></abbr> with the 
+			<abbr title="SuperScript.Emitters.IEmitter.Key"><code>Key</code></abbr> "javascript" is configured within the project. 
+			This is not provided out of the box by SuperScript.)
 	        </p>
 			
 	        <p>
-			This example will also move the inner <code>&lt;script&gt;</code> block into a 
-			<abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration which will 
-			be added as the first item in the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr>. Note that 
-			this declarable will be added as the first item in the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr> at
-			the time when it is being processed; this is notwithstanding any later declarations which may also be inserted at the same index.
+			The declaration created in the above example will be added as the first item in the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr>. 
+			Note that this declarable will only be assured as the first item in the <abbr title="SuperScript.Declarations.Collection"><code>Collection</code></abbr> at
+			the time it is being processed; this is notwithstanding any later declarations which may also be inserted at the same index.
             	</p>
             	
             	<h3>The Contents</h3>
             	
             	<p>
-            		The contents of the block do not necessarily need to be JavaScript. SuperScript will simply move the contents 
+            		The contents of the block are not required to be JavaScript. SuperScript will simply move the contents 
             		into a <abbr title="SuperScript.JavaScript.Declarables.CollectedScript"><code>CollectedScript</code></abbr> declaration. It
             		is left to the developer to configure how and where these contents are emitted.
             	</p>
