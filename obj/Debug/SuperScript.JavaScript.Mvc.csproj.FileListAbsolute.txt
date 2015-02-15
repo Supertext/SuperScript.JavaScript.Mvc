@@ -2,6 +2,7 @@ C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperSc
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\SuperScript.JavaScript.Mvc.dll
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\SuperScript.JavaScript.Mvc.pdb
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\SuperScript.Common.dll
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\SuperScript.Container.Mvc.dll
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\SuperScript.JavaScript.dll
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\System.Web.Helpers.dll
@@ -14,6 +15,7 @@ C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperSc
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\WebGrease.dll
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\Antlr3.Runtime.dll
+C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\SuperScript.Common.pdb
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\SuperScript.Container.Mvc.pdb
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\SuperScript.JavaScript.pdb
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\System.Web.Helpers.xml
@@ -29,5 +31,4 @@ C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperSc
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\obj\Debug\SuperScript.JavaScript.Mvc.csprojResolveAssemblyReference.cache
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\obj\Debug\SuperScript.JavaScript.Mvc.dll
 C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\obj\Debug\SuperScript.JavaScript.Mvc.pdb
-C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\SuperScript.Common.dll
-C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\SuperScript.Common.pdb
+C:\Users\Andrew\Documents\Visual Studio 2012\Projects\SuperScriptLibrary\SuperScript.JavaScript.Mvc\bin\Debug\SuperScript.Common.xml
